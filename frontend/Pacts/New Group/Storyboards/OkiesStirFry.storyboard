@@ -69,6 +69,9 @@
                                                             <constraint firstAttribute="height" constant="24" id="XNc-tc-6nW"/>
                                                         </constraints>
                                                         <state key="normal" image="Down arrow"/>
+                                                        <connections>
+                                                            <segue destination="JE4-X3-YQz" kind="presentation" id="xqb-c4-Y0m"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.94117647059999998" green="0.67843137249999996" blue="0.67843137249999996" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -129,8 +132,95 @@
             </objects>
             <point key="canvasLocation" x="2891" y="535"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="1kK-ck-BaH">
+            <objects>
+                <viewController id="JE4-X3-YQz" sceneMemberID="viewController">
+                    <visualEffectView key="view" opaque="NO" contentMode="scaleToFill" id="QbD-u8-SN7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hdp-jq-pkj">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ptf-4h-47J">
+                                    <rect key="frame" x="107" y="301" width="200" height="240"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARp-bz-RZ4">
+                                            <rect key="frame" x="0.0" y="120" width="200" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="200" id="NsI-xW-oTq"/>
+                                                <constraint firstAttribute="height" constant="30" id="k62-v0-RNb"/>
+                                            </constraints>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Hiking with Happy Dave">
+                                                    <attributes>
+                                                        <font key="NSFont" size="17" name="Helvetica-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                            <size key="shadowOffset" width="1" height="-1"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trees" translatesAutoresizingMaskIntoConstraints="NO" id="l1R-U4-CD7">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="uSg-NY-Jnq"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="pink profile check" translatesAutoresizingMaskIntoConstraints="NO" id="mBt-Q1-IjA">
+                                            <rect key="frame" x="16" y="170" width="31" height="36"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="31" id="C1E-Am-h44"/>
+                                                <constraint firstAttribute="height" constant="36" id="IOZ-iO-HRM"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="yellow profile check" translatesAutoresizingMaskIntoConstraints="NO" id="du5-My-cLb">
+                                            <rect key="frame" x="59" y="170" width="31" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="31" id="4oY-bc-xOp"/>
+                                                <constraint firstAttribute="height" constant="35" id="uRB-g5-YfM"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="l1R-U4-CD7" firstAttribute="top" secondItem="ptf-4h-47J" secondAttribute="top" id="TMq-jQ-rBP"/>
+                                        <constraint firstAttribute="height" constant="240" id="YYJ-6J-RSk"/>
+                                        <constraint firstAttribute="trailing" secondItem="l1R-U4-CD7" secondAttribute="trailing" id="a74-ot-udO"/>
+                                        <constraint firstItem="mBt-Q1-IjA" firstAttribute="leading" secondItem="ptf-4h-47J" secondAttribute="leading" constant="16" id="bnF-Jn-pSf"/>
+                                        <constraint firstItem="ARp-bz-RZ4" firstAttribute="centerX" secondItem="ptf-4h-47J" secondAttribute="centerX" id="foo-Jw-yb1"/>
+                                        <constraint firstItem="du5-My-cLb" firstAttribute="leading" secondItem="mBt-Q1-IjA" secondAttribute="trailing" constant="12" id="gc4-LI-TAi"/>
+                                        <constraint firstItem="ARp-bz-RZ4" firstAttribute="top" secondItem="l1R-U4-CD7" secondAttribute="bottom" constant="20" id="iuW-cT-hrF"/>
+                                        <constraint firstItem="mBt-Q1-IjA" firstAttribute="top" secondItem="ARp-bz-RZ4" secondAttribute="bottom" constant="20" id="rmX-Yg-hxm"/>
+                                        <constraint firstItem="l1R-U4-CD7" firstAttribute="leading" secondItem="ptf-4h-47J" secondAttribute="leading" id="ub2-DS-OqS"/>
+                                        <constraint firstItem="du5-My-cLb" firstAttribute="top" secondItem="ARp-bz-RZ4" secondAttribute="bottom" constant="20" id="wLd-R2-RhA"/>
+                                        <constraint firstAttribute="width" constant="200" id="wjf-JE-Az8"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="20"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="ptf-4h-47J" firstAttribute="centerX" secondItem="hdp-jq-pkj" secondAttribute="centerX" id="3Ns-CO-jtr"/>
+                                <constraint firstItem="ptf-4h-47J" firstAttribute="centerY" secondItem="hdp-jq-pkj" secondAttribute="centerY" id="pIf-1k-fzu"/>
+                            </constraints>
+                        </view>
+                        <blurEffect style="regular"/>
+                    </visualEffectView>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fVQ-x8-M5w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3749" y="535"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Down arrow" width="30" height="30"/>
+        <image name="Trees" width="137" height="94"/>
+        <image name="pink profile check" width="31" height="36"/>
+        <image name="yellow profile check" width="31" height="35"/>
     </resources>
 </document>

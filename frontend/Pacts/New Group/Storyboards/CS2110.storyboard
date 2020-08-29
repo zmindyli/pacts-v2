@@ -144,16 +144,16 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaT-ll-kIC">
-                                    <rect key="frame" x="30" y="301" width="354" height="240"/>
+                                    <rect key="frame" x="107" y="301" width="200" height="240"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Picnic" translatesAutoresizingMaskIntoConstraints="NO" id="lPd-wx-dzt">
-                                            <rect key="frame" x="20" y="0.0" width="314" height="100"/>
+                                            <rect key="frame" x="20" y="0.0" width="160" height="100"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="100" id="kUl-hi-Br1"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8V-kp-hLt">
-                                            <rect key="frame" x="77" y="120" width="200" height="30"/>
+                                            <rect key="frame" x="0.0" y="120" width="200" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="200" id="VJB-XP-1Ce"/>
                                                 <constraint firstAttribute="height" constant="30" id="in1-29-Bf9"/>
@@ -169,16 +169,36 @@
                                             <nil key="highlightedColor"/>
                                             <size key="shadowOffset" width="1" height="-1"/>
                                         </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="blue profile no" translatesAutoresizingMaskIntoConstraints="NO" id="8Fx-Ia-MNV">
+                                            <rect key="frame" x="16" y="170" width="30" height="33"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="33" id="43i-KG-Kxv"/>
+                                                <constraint firstAttribute="width" constant="30" id="AY3-Fx-8ob"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="green profile check" translatesAutoresizingMaskIntoConstraints="NO" id="D5E-Vu-JTp">
+                                            <rect key="frame" x="58" y="170" width="33" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="33" id="XmR-tx-p3d"/>
+                                                <constraint firstAttribute="height" constant="35" id="ve1-jT-xjb"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="D5E-Vu-JTp" firstAttribute="top" secondItem="n8V-kp-hLt" secondAttribute="bottom" constant="20" id="1uS-ne-mXF"/>
                                         <constraint firstItem="lPd-wx-dzt" firstAttribute="centerX" secondItem="eaT-ll-kIC" secondAttribute="centerX" id="9Eo-fE-vdg"/>
                                         <constraint firstAttribute="height" constant="240" id="BvS-rC-I9d"/>
                                         <constraint firstItem="lPd-wx-dzt" firstAttribute="top" secondItem="eaT-ll-kIC" secondAttribute="top" id="EbW-5b-yKw"/>
+                                        <constraint firstItem="D5E-Vu-JTp" firstAttribute="leading" secondItem="8Fx-Ia-MNV" secondAttribute="trailing" constant="12" id="GoC-u7-VRD"/>
+                                        <constraint firstItem="n8V-kp-hLt" firstAttribute="leading" secondItem="eaT-ll-kIC" secondAttribute="leading" id="J3V-DF-fyG"/>
                                         <constraint firstItem="lPd-wx-dzt" firstAttribute="leading" secondItem="eaT-ll-kIC" secondAttribute="leading" constant="20" id="JN9-CP-CAo"/>
                                         <constraint firstAttribute="trailing" secondItem="lPd-wx-dzt" secondAttribute="trailing" constant="20" id="MFn-GZ-D5b"/>
+                                        <constraint firstAttribute="trailing" secondItem="n8V-kp-hLt" secondAttribute="trailing" id="QzM-oG-SoA"/>
+                                        <constraint firstItem="8Fx-Ia-MNV" firstAttribute="leading" secondItem="eaT-ll-kIC" secondAttribute="leading" constant="16" id="WS9-R2-a2x"/>
                                         <constraint firstItem="n8V-kp-hLt" firstAttribute="centerX" secondItem="eaT-ll-kIC" secondAttribute="centerX" id="XOI-8U-Tmb"/>
+                                        <constraint firstItem="8Fx-Ia-MNV" firstAttribute="top" secondItem="n8V-kp-hLt" secondAttribute="bottom" constant="20" id="gZK-lh-MVv"/>
+                                        <constraint firstAttribute="width" constant="200" id="i34-zf-kUb"/>
                                         <constraint firstItem="n8V-kp-hLt" firstAttribute="top" secondItem="lPd-wx-dzt" secondAttribute="bottom" constant="20" id="nVi-BD-G0b"/>
-                                        <constraint firstItem="n8V-kp-hLt" firstAttribute="top" secondItem="lPd-wx-dzt" secondAttribute="bottom" constant="20" id="sDD-zm-AlN"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -188,9 +208,10 @@
                                 </view>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="eaT-ll-kIC" secondAttribute="trailing" constant="30" id="5E7-Xb-aap"/>
+                                <constraint firstItem="eaT-ll-kIC" firstAttribute="centerX" secondItem="3wX-kU-bq0" secondAttribute="centerX" id="DWc-XZ-2qj"/>
                                 <constraint firstItem="eaT-ll-kIC" firstAttribute="centerY" secondItem="3wX-kU-bq0" secondAttribute="centerY" id="Sdp-Bw-1IS"/>
-                                <constraint firstItem="eaT-ll-kIC" firstAttribute="leading" secondItem="3wX-kU-bq0" secondAttribute="leading" constant="30" id="ogF-16-aEV"/>
+                                <constraint firstItem="eaT-ll-kIC" firstAttribute="centerX" secondItem="3wX-kU-bq0" secondAttribute="centerX" id="X8f-Le-Nao"/>
+                                <constraint firstItem="eaT-ll-kIC" firstAttribute="centerY" secondItem="3wX-kU-bq0" secondAttribute="centerY" id="sdk-VZ-P6x"/>
                             </constraints>
                         </view>
                         <blurEffect style="regular"/>
@@ -198,11 +219,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cXb-eQ-Osc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3749" y="535"/>
+            <point key="canvasLocation" x="3747.826086956522" y="534.375"/>
         </scene>
     </scenes>
     <resources>
         <image name="Down arrow" width="30" height="30"/>
         <image name="Picnic" width="109" height="63"/>
+        <image name="blue profile no" width="30" height="33"/>
+        <image name="green profile check" width="33" height="35"/>
     </resources>
 </document>
