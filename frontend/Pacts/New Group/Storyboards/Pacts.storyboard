@@ -45,7 +45,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="dL8-QW-rQX">
-                                <rect key="frame" x="42" y="272.5" width="330" height="230"/>
+                                <rect key="frame" x="42" y="218.5" width="330" height="230"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4J-mM-Di9">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="230"/>
@@ -102,17 +102,28 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Pact" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8V-aR-mWK">
+                                <rect key="frame" x="292" y="769" width="54" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="1B8-nX-K0V"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.2470588235" green="0.2470588235" blue="0.2470588235" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Pix-xl-qpV" firstAttribute="leading" secondItem="CXI-XS-bwh" secondAttribute="leading" constant="30" id="1TM-ct-ICp"/>
-                            <constraint firstItem="dL8-QW-rQX" firstAttribute="top" secondItem="Pix-xl-qpV" secondAttribute="bottom" constant="110" id="3Rt-Ga-jnC"/>
+                            <constraint firstItem="dL8-QW-rQX" firstAttribute="top" secondItem="Pix-xl-qpV" secondAttribute="bottom" constant="56" id="3Rt-Ga-jnC"/>
                             <constraint firstItem="CXI-XS-bwh" firstAttribute="trailing" secondItem="JgI-81-K3f" secondAttribute="trailing" constant="20" id="4I4-Oz-Doj"/>
+                            <constraint firstItem="CXI-XS-bwh" firstAttribute="bottom" secondItem="Y8V-aR-mWK" secondAttribute="bottom" constant="24" id="5rm-Gu-68Y"/>
                             <constraint firstItem="CXI-XS-bwh" firstAttribute="bottom" secondItem="mpy-Sp-oey" secondAttribute="bottom" constant="20" id="Lkv-zG-2IH"/>
                             <constraint firstItem="3aK-cB-hMH" firstAttribute="top" secondItem="CXI-XS-bwh" secondAttribute="top" constant="40" id="SyY-LK-Hrq"/>
                             <constraint firstItem="CXI-XS-bwh" firstAttribute="trailing" secondItem="mpy-Sp-oey" secondAttribute="trailing" constant="30" id="TN8-m6-uMw"/>
                             <constraint firstItem="JgI-81-K3f" firstAttribute="top" secondItem="CXI-XS-bwh" secondAttribute="top" constant="40" id="Tt8-wR-Wfd"/>
                             <constraint firstItem="Pix-xl-qpV" firstAttribute="top" secondItem="CXI-XS-bwh" secondAttribute="top" constant="40" id="eg7-t1-Vwo" userLabel="Pacts.top = Safe Area.top + 20"/>
+                            <constraint firstItem="mpy-Sp-oey" firstAttribute="leading" secondItem="Y8V-aR-mWK" secondAttribute="trailing" constant="8" id="mn5-C5-gtc"/>
                             <constraint firstItem="dL8-QW-rQX" firstAttribute="centerX" secondItem="afx-HT-bOP" secondAttribute="centerX" id="sCK-z4-PQm"/>
                             <constraint firstItem="CXI-XS-bwh" firstAttribute="trailing" secondItem="3aK-cB-hMH" secondAttribute="trailing" constant="20" id="zju-Kb-Y3O"/>
                         </constraints>
