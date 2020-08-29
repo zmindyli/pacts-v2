@@ -146,16 +146,15 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ptf-4h-47J">
-                                    <rect key="frame" x="107" y="301" width="200" height="240"/>
+                                    <rect key="frame" x="57" y="301" width="300" height="240"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARp-bz-RZ4">
-                                            <rect key="frame" x="0.0" y="120" width="200" height="30"/>
+                                            <rect key="frame" x="26.5" y="120" width="247.5" height="30"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="200" id="NsI-xW-oTq"/>
                                                 <constraint firstAttribute="height" constant="30" id="k62-v0-RNb"/>
                                             </constraints>
                                             <attributedString key="attributedText">
-                                                <fragment content="Hiking with Happy Dave">
+                                                <fragment content="Hiking with Happy Dave, 10AM">
                                                     <attributes>
                                                         <font key="NSFont" size="17" name="Helvetica-Bold"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -166,38 +165,49 @@
                                             <size key="shadowOffset" width="1" height="-1"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trees" translatesAutoresizingMaskIntoConstraints="NO" id="l1R-U4-CD7">
-                                            <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="100" id="uSg-NY-Jnq"/>
                                             </constraints>
                                         </imageView>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="pink profile check" translatesAutoresizingMaskIntoConstraints="NO" id="mBt-Q1-IjA">
-                                            <rect key="frame" x="16" y="170" width="31" height="36"/>
+                                            <rect key="frame" x="20" y="170" width="31" height="36"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="31" id="C1E-Am-h44"/>
                                                 <constraint firstAttribute="height" constant="36" id="IOZ-iO-HRM"/>
                                             </constraints>
                                         </imageView>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="yellow profile check" translatesAutoresizingMaskIntoConstraints="NO" id="du5-My-cLb">
-                                            <rect key="frame" x="59" y="170" width="31" height="35"/>
+                                            <rect key="frame" x="63" y="170" width="31" height="35"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="31" id="4oY-bc-xOp"/>
                                                 <constraint firstAttribute="height" constant="35" id="uRB-g5-YfM"/>
                                             </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Martha and Denise are going." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="loq-Pz-Nwh">
+                                            <rect key="frame" x="20" y="214" width="173" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="tnF-iH-v2v"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                            <color key="textColor" red="0.2470588235" green="0.2470588235" blue="0.2470588235" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="loq-Pz-Nwh" firstAttribute="top" secondItem="mBt-Q1-IjA" secondAttribute="bottom" constant="8" id="Clk-Cm-8Zl"/>
+                                        <constraint firstItem="loq-Pz-Nwh" firstAttribute="leading" secondItem="ptf-4h-47J" secondAttribute="leading" constant="20" id="Kuq-lr-D8i"/>
                                         <constraint firstItem="l1R-U4-CD7" firstAttribute="top" secondItem="ptf-4h-47J" secondAttribute="top" id="TMq-jQ-rBP"/>
                                         <constraint firstAttribute="height" constant="240" id="YYJ-6J-RSk"/>
                                         <constraint firstAttribute="trailing" secondItem="l1R-U4-CD7" secondAttribute="trailing" id="a74-ot-udO"/>
-                                        <constraint firstItem="mBt-Q1-IjA" firstAttribute="leading" secondItem="ptf-4h-47J" secondAttribute="leading" constant="16" id="bnF-Jn-pSf"/>
+                                        <constraint firstItem="mBt-Q1-IjA" firstAttribute="leading" secondItem="ptf-4h-47J" secondAttribute="leading" constant="20" id="bnF-Jn-pSf"/>
                                         <constraint firstItem="ARp-bz-RZ4" firstAttribute="centerX" secondItem="ptf-4h-47J" secondAttribute="centerX" id="foo-Jw-yb1"/>
                                         <constraint firstItem="du5-My-cLb" firstAttribute="leading" secondItem="mBt-Q1-IjA" secondAttribute="trailing" constant="12" id="gc4-LI-TAi"/>
                                         <constraint firstItem="ARp-bz-RZ4" firstAttribute="top" secondItem="l1R-U4-CD7" secondAttribute="bottom" constant="20" id="iuW-cT-hrF"/>
                                         <constraint firstItem="mBt-Q1-IjA" firstAttribute="top" secondItem="ARp-bz-RZ4" secondAttribute="bottom" constant="20" id="rmX-Yg-hxm"/>
                                         <constraint firstItem="l1R-U4-CD7" firstAttribute="leading" secondItem="ptf-4h-47J" secondAttribute="leading" id="ub2-DS-OqS"/>
                                         <constraint firstItem="du5-My-cLb" firstAttribute="top" secondItem="ARp-bz-RZ4" secondAttribute="bottom" constant="20" id="wLd-R2-RhA"/>
-                                        <constraint firstAttribute="width" constant="200" id="wjf-JE-Az8"/>
+                                        <constraint firstAttribute="width" constant="300" id="wjf-JE-Az8"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
