@@ -16,10 +16,10 @@ class Event {
     //for now string but later of type catagory
     //change
     var type: [String]!
-    var time: [String]!
+    var time: String
     
     //change catagory type
-    init(name: String, imageString: String, categories: [String]) {
+    init(name: String, type: [String]!, time: String) {
         self.name = name
         self.type = type
         self.time = time
