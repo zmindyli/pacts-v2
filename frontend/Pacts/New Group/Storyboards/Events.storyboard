@@ -52,9 +52,12 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="8yt-1k-cfZ">
-                                <rect key="frame" x="310" y="69" width="27" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="8yt-1k-cfZ">
+                                <rect key="frame" x="307" y="67" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="lDt-ZV-tUk"/>
+                                    <constraint firstAttribute="width" constant="30" id="mvL-Sc-JCD"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k80-F3-a7o">
                                 <rect key="frame" x="224" y="540.5" width="140" height="17"/>
@@ -90,7 +93,9 @@
                             <constraint firstItem="k80-F3-a7o" firstAttribute="top" secondItem="747-IX-U1d" secondAttribute="bottom" constant="170" id="DC0-4B-7sw"/>
                             <constraint firstItem="KSI-Qz-SEb" firstAttribute="top" secondItem="747-IX-U1d" secondAttribute="bottom" constant="10" id="FlY-73-9M1"/>
                             <constraint firstItem="747-IX-U1d" firstAttribute="top" secondItem="H24-ih-sd4" secondAttribute="top" id="Gbe-jh-tiL"/>
+                            <constraint firstAttribute="trailing" secondItem="8yt-1k-cfZ" secondAttribute="trailing" constant="77" id="Q1t-mp-HU2"/>
                             <constraint firstItem="747-IX-U1d" firstAttribute="leading" secondItem="H24-ih-sd4" secondAttribute="leading" constant="23" id="Twn-6n-5dV"/>
+                            <constraint firstItem="747-IX-U1d" firstAttribute="top" secondItem="8yt-1k-cfZ" secondAttribute="bottom" constant="43" id="eKG-n7-ZWw"/>
                             <constraint firstItem="0db-5Q-7kq" firstAttribute="top" secondItem="k80-F3-a7o" secondAttribute="bottom" constant="20" id="m1L-3n-wYD"/>
                             <constraint firstItem="KSI-Qz-SEb" firstAttribute="leading" secondItem="H24-ih-sd4" secondAttribute="leading" constant="23" id="s4b-7z-Wxg"/>
                             <constraint firstItem="0db-5Q-7kq" firstAttribute="leading" secondItem="H24-ih-sd4" secondAttribute="leading" constant="20" id="w8h-V7-4HG"/>
@@ -233,7 +238,7 @@
     </scenes>
     <resources>
         <image name="Events" width="31" height="31"/>
-        <image name="Profile" width="50" height="50"/>
+        <image name="Profile" width="31" height="30"/>
         <image name="RedEvents" width="321" height="230.5"/>
         <image name="Yellow Events" width="324" height="119"/>
     </resources>
