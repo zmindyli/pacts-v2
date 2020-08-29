@@ -21,6 +21,8 @@
 		16A9020A24F8B6BC0014D6D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16A9020924F8B6BC0014D6D8 /* Assets.xcassets */; };
 		16A9020D24F8B6BC0014D6D8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16A9020C24F8B6BC0014D6D8 /* Preview Assets.xcassets */; };
 		16A9021024F8B6BC0014D6D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16A9020E24F8B6BC0014D6D8 /* LaunchScreen.storyboard */; };
+		16C1E7CC24FA826F0049F981 /* OkiesStirFryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C1E7CB24FA826F0049F981 /* OkiesStirFryViewController.swift */; };
+		16C1E7CE24FA83DE0049F981 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C1E7CD24FA83DE0049F981 /* Event.swift */; };
 		2D981B4024FA28050044B79B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D981B3F24FA28050044B79B /* Profile.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +42,8 @@
 		16A9020C24F8B6BC0014D6D8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		16A9020F24F8B6BC0014D6D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16A9021124F8B6BC0014D6D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16C1E7CB24FA826F0049F981 /* OkiesStirFryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OkiesStirFryViewController.swift; path = Pacts/OkiesStirFryViewController.swift; sourceTree = SOURCE_ROOT; };
+		16C1E7CD24FA83DE0049F981 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Event.swift; path = ../../Event.swift; sourceTree = "<group>"; };
 		2D981B3F24FA28050044B79B /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		3A3EBF82D05F3C77FEB7F983 /* Pods_Pacts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pacts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82DFD51F77945E7F6A43E103 /* Pods-Pacts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pacts.debug.xcconfig"; path = "Target Support Files/Pods-Pacts/Pods-Pacts.debug.xcconfig"; sourceTree = "<group>"; };
@@ -81,8 +85,8 @@
 				1695B43D24F9894F00D3D693 /* Main.storyboard */,
 				16A669E124F9B0F800BC3232 /* Pacts.storyboard */,
 				2D981B3F24FA28050044B79B /* Profile.storyboard */,
-				16A669EB24FA1FF700BC3232 /* OkiesStirFry.storyboard */,
 				16A669E924FA1F2A00BC3232 /* CS2110.storyboard */,
+				16A669EB24FA1FF700BC3232 /* OkiesStirFry.storyboard */,
 				16A669DF24F9B08C00BC3232 /* Events.storyboard */,
 			);
 			path = Storyboards;
@@ -111,6 +115,8 @@
 			children = (
 				1695B43F24F99B0900D3D693 /* New Group */,
 				16A9020324F8B6BA0014D6D8 /* AppDelegate.swift */,
+				16C1E7CB24FA826F0049F981 /* OkiesStirFryViewController.swift */,
+				16C1E7CD24FA83DE0049F981 /* Event.swift */,
 				16A9020524F8B6BA0014D6D8 /* SceneDelegate.swift */,
 				16A669E324F9B23300BC3232 /* EventsViewController.swift */,
 				16A669E524F9B6EB00BC3232 /* DetailedEventsViewController.swift */,
@@ -260,6 +266,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16C1E7CE24FA83DE0049F981 /* Event.swift in Sources */,
+				16C1E7CC24FA826F0049F981 /* OkiesStirFryViewController.swift in Sources */,
 				16A669E824FA003100BC3232 /* EventsTableTableViewController.swift in Sources */,
 				16A9020424F8B6BA0014D6D8 /* AppDelegate.swift in Sources */,
 				16A669E624F9B6EB00BC3232 /* DetailedEventsViewController.swift in Sources */,
