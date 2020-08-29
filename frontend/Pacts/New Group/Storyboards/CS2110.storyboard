@@ -160,7 +160,7 @@
                                                 <constraint firstAttribute="height" constant="30" id="in1-29-Bf9"/>
                                             </constraints>
                                             <attributedString key="attributedText">
-                                                <fragment content="Picnic with Gries, 3PM">
+                                                <fragment content="Dinner with Gries, 3PM">
                                                     <attributes>
                                                         <font key="NSFont" size="17" name="Helvetica-Bold"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
