@@ -53,7 +53,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="8yt-1k-cfZ">
-                                <rect key="frame" x="307" y="67" width="30" height="30"/>
+                                <rect key="frame" x="354" y="67" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="lDt-ZV-tUk"/>
                                     <constraint firstAttribute="width" constant="30" id="mvL-Sc-JCD"/>
@@ -93,8 +93,9 @@
                             <constraint firstItem="k80-F3-a7o" firstAttribute="top" secondItem="747-IX-U1d" secondAttribute="bottom" constant="170" id="DC0-4B-7sw"/>
                             <constraint firstItem="KSI-Qz-SEb" firstAttribute="top" secondItem="747-IX-U1d" secondAttribute="bottom" constant="10" id="FlY-73-9M1"/>
                             <constraint firstItem="747-IX-U1d" firstAttribute="top" secondItem="H24-ih-sd4" secondAttribute="top" id="Gbe-jh-tiL"/>
-                            <constraint firstAttribute="trailing" secondItem="8yt-1k-cfZ" secondAttribute="trailing" constant="77" id="Q1t-mp-HU2"/>
+                            <constraint firstAttribute="trailing" secondItem="8yt-1k-cfZ" secondAttribute="trailing" constant="30" id="Q1t-mp-HU2"/>
                             <constraint firstItem="747-IX-U1d" firstAttribute="leading" secondItem="H24-ih-sd4" secondAttribute="leading" constant="23" id="Twn-6n-5dV"/>
+                            <constraint firstItem="H24-ih-sd4" firstAttribute="trailing" secondItem="k80-F3-a7o" secondAttribute="trailing" constant="50" id="cgv-ZV-bkg"/>
                             <constraint firstItem="747-IX-U1d" firstAttribute="top" secondItem="8yt-1k-cfZ" secondAttribute="bottom" constant="43" id="eKG-n7-ZWw"/>
                             <constraint firstItem="0db-5Q-7kq" firstAttribute="top" secondItem="k80-F3-a7o" secondAttribute="bottom" constant="20" id="m1L-3n-wYD"/>
                             <constraint firstItem="KSI-Qz-SEb" firstAttribute="leading" secondItem="H24-ih-sd4" secondAttribute="leading" constant="23" id="s4b-7z-Wxg"/>
@@ -149,21 +150,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="RedEvents" translatesAutoresizingMaskIntoConstraints="NO" id="0Pk-q4-0zQ">
-                                <rect key="frame" x="10" y="478" width="394" height="270"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RedEvents" translatesAutoresizingMaskIntoConstraints="NO" id="0Pk-q4-0zQ">
+                                <rect key="frame" x="10" y="490" width="394" height="230.5"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISq-H5-i9F">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISq-H5-i9F">
                                 <rect key="frame" x="10" y="450" width="53" height="24"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
                                 <color key="textColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9xx-qb-erc" customClass="FSCalendar">
+                            <view clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9xx-qb-erc" customClass="FSCalendar">
                                 <rect key="frame" x="28" y="140" width="359" height="300"/>
                                 <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="heT-Ev-hSR"/>
+                                    <constraint firstAttribute="height" constant="300" id="heT-Ev-hSR"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="eventDefaultColor">
