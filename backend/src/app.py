@@ -2,7 +2,7 @@ import json
 from flask import Flask, request
 import dao
 import os
-from db import db, User, Group, Activiity, Poll, Event
+from db import db, User, Group, Activity, Poll1, Poll2, Event
 
 app = Flask(__name__)
 db_filename = "slack.db"
@@ -178,6 +178,73 @@ def delete_activity_by_id(activity_id):
 
 ######################################################################################################
 #Poll
+#get all polls
+@app.route('/poll1/', methods = ['GET'])
+def get_all_poll1s():
+    return success_response(dao.get_all_poll1s())
+@app.route('/poll2/', methods=['GET'])
+def get_all_poll2s():
+    return success_response(dao.get_all_poll2s())
+
+#get poll by id
+@app.route('/poll1s/<int:poll1_id>/', methods=['GET'])
+def get_poll1_by_id(poll1_id):
+    poll1 = dao.get_poll1_by_id(poll1_id)
+    if poll1 is None:
+        return failure_response('Poll not found!')
+    return success_response(poll1)
+@app.route('/poll2s/<int:poll2_id>/', methods=['GET'])
+def get_poll2_by_id(poll2_id):
+    poll2 = dao.get_poll2_by_id(poll2_id)
+    if poll2 is None:
+        return failure_response('Poll not found!')
+    return success_response(poll2)
+
+
+#get polls in group
+@app.route('/group/<int:group_id>/poll1s/', methods=['GET'])
+def get_poll1s_in_group(group_id):
+    poll1s = dao.get_poll1s_in_group(group_id)
+    if group is None:
+        return failure_response('Group not found!')
+    return success_response(poll1s)
+def get_poll2s_in_group(group_id):
+    poll2s = dao.get_poll2s_in_group(group_id)
+    if group is None:
+        return failure_response('Group not found!')
+    return success_response(poll2s)
+
+#create polls
+@app.route('/group/<int:group_id>/poll1s/', methods=['POST'])
+def create_poll1(group_id):
+    body = json.loads(request.data)
+    poll1 = dao.create_poll1(
+        eventdate=body.get('eventdate'),
+        group=group_id,
+    )
+    return success_response(poll1)
+@app.route('/group/<int:group_id>/poll2s/', methods=['POST'])
+def create_poll2(group_id):
+    body = json.loads(request.data)
+    poll2 = dao.create_poll1(
+        eventdate=body.get('eventdate'),
+        group=group_id,
+    )
+    return success_response(poll1)
+
+#update polls (when people vote)
+@app.route('/group/<int:group_id>/poll1s/<int:poll1_id>/', methods=['POST'])
+def update_poll1(group_id, poll1_id):
+    body = json.loads(request.data)
+    poll1 = dao.update_poll1(poll1_id,body)
+    if poll1 is None:
+        return failure_response('Poll not found!')
+@app.route('/group/<int:group_id>/poll1s/<int:poll2_id>/', methods=['POST'])
+def update_poll2(group_id, poll2_id):
+    body = json.loads(request.data)
+    poll2 = dao.update_poll2(poll2_id,body)
+    if poll2 is None:
+        return failure_response('Poll not found!')
 
 ######################################################################################################
 #Event
@@ -205,7 +272,7 @@ def get_events_in_group(group_id):
 #create event
 @app.route('/group/<int:group_id>/events/', methods=['POST'])
 def create_event(group_id):
-    event = json.loads(request.data)
+    body = json.loads(request.data)
     event = dao.create_event(
         name=body.get('name'),
         group=group_id,
@@ -222,6 +289,8 @@ def delete_event_by_id(event_id):
     if event is None:
         return failure_response('Event not found!')
     return success_response(event)
+
+
 
 
 

@@ -1,5 +1,5 @@
 from time import time, ctime
-from db import db, User, Group, Activiity, Message, Poll, Event
+from db import db, User, Group, Activity, Poll1, Poll2, Event
 
 #learn oauth?
 #todo:
@@ -65,7 +65,7 @@ def get_group_by_id(group_id):
         return None
     return group.serialize()
 
-def create_group(name=None, user_id):
+def create_group(user_id,name=None):
     user = User.query.filter_by(id=user_id).first()
     if user is None:
         return None
@@ -134,7 +134,6 @@ def get_activity_by_id(activity_id):
     return activity.serialize()
 
 def create_activity(name, category, timeofday, weather, minnumppl, maxnumppl, location, description):
-    activity = Activity.query.filter_by(id=activity_id).first()
     new_activity = Activity(
         name=name,
         category=category,
@@ -172,6 +171,7 @@ def delete_activity(activity_id):
     return activity.serialize()
 
 ######################################################################################################
+#To be
 #Message
 # def get_all_messages():
 
@@ -185,9 +185,12 @@ def delete_activity(activity_id):
 
 
 ######################################################################################################
-#Poll 1
+#Poll 
 def get_all_poll1s():
     return [p.serialize() for p in Poll1.query.all()]
+
+def get_all_poll2s():
+    return [p.serialize() for p in Poll2.query.all()]
 
 def get_poll1_by_id(poll1_id):
     poll1 = Poll1.query.filter_by(id=poll1_id).first()
@@ -195,11 +198,31 @@ def get_poll1_by_id(poll1_id):
         return None
     return poll1.serialize()
 
+def get_poll2_by_id(poll1_id):
+    poll2 = Poll2.query.filter_by(id=poll2_id).first()
+    if poll2 is None:
+        return None
+    return poll2.serialize()
+
 def get_poll1s_in_group(group_id):
     group = Group.query.filter_by(id=group_id).first()
     if group is None:
         return None
     return [p.serialize() for p in group.poll1s]
+
+def get_poll2s_in_group(group_id):
+    group = Group.query.filter_by(id=group_id).first()
+    if group is None:
+        return None
+    return [p.serialize() for p in group.poll2s]
+
+# def get_all_polls_in_group(group_id):
+#     group = Group.query.filter_by(id=group_id).first()
+#     if group is None:
+#         return None
+#     poll1 = get_poll1s_in_group(group_id)
+#     poll2 = get_poll2s_in_group(group_id)
+#     allpolls 
 
 def create_poll1(group_id, eventday):
         group = Group.query.filter_by(id=group_id).first()
@@ -228,12 +251,14 @@ def create_poll2(group_id, poll1_id, eventtime):
             poll1=poll1_id,
             eventtime=eventtime,
             group=group_id,
+            
             choices=json.dumps([
             "Hiking with Touchdown",
             "Apple Picking",
             "Paddling at Cayuga Lake",
             "Picnic on the Slope",
-            "Visit the Sagan Planet Walk"]), #given more time, we would actually suggest events based on polls
+            "Visit the Sagan Planet Walk"]) 
+            #given more time, we would actually suggest events based on polls, and have a larget database of activites
         )
         db.session.add(new_poll2)
         db.session.commit()
@@ -243,9 +268,24 @@ def update_poll1(poll1_id, body):
     poll1 = Poll1.query.filter_by(id=poll1_id).first()
     if poll1 is None:
         return None
-    poll1.answer1 = body.get("name", activity.name
+    ans1 = json.loads(poll1.answer1)
+    ans1[body.get("user_id")] = body.get("choice1")
+    ans2 = json.loads(poll1.answer1)
+    ans2[body.get("user_id")] = body.get("choice1")
+    poll1.answer1 = json.dumps(ans1)
+    poll1.answer2 = json.dumps(ans2)
     db.session.commit()
-    return activity.serialize()
+    return poll1.serialize()
+
+def update_poll2(poll2_id, body):
+    poll2 = Poll2.query.filter_by(id=poll2_id).first()
+    if poll2 is None:
+        return None
+    ans = json.loads(poll2.answer)
+    ans[body.get("user_id")] = body.get("choice")
+    poll2.answer = json.dumps(ans)
+    db.session.commit()
+    return poll2.serialize()
 
 
 ######################################################################################################
@@ -297,7 +337,7 @@ def add_vote(event_id, user_id):
     db.session.commit()
     return event.serialize()
 
-def remote_vote(event_id, user_id):
+def remove_vote(event_id, user_id):
     event = Event.query.filter-by(id=event_id).first()
     user = User.query.filter_by(id=user_id).first()
     if user is None or event is None:

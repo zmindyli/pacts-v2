@@ -8,12 +8,12 @@ association_table_usergrp = db.Table('association_usergrp', db.Model.metadata,
     db.Column('user_id', db.Integer, db.ForeignKey('user.id'))
     )
 
-association_table_attevt = db.Table('association_userevt', db.Model.metadata,
+association_table_attevt = db.Table('association_attevt', db.Model.metadata,
     db.Column('event_id', db.Integer, db.ForeignKey('event.id')),
     db.Column('user_id', db.Integer, db.ForeignKey('user.id'))
     )
 
-association_table_nattevt = db.Table('association_userevt', db.Model.metadata,
+association_table_nattevt = db.Table('association_nattevt', db.Model.metadata,
     db.Column('event_id', db.Integer, db.ForeignKey('event.id')),
     db.Column('user_id', db.Integer, db.ForeignKey('user.id'))
     )
@@ -67,40 +67,41 @@ class Group(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String, nullable = True) #name of group
     organizer = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    members = ('User', secondary=association_table_usergrp, back_populates='groups')
+    members = db.relationship('User', secondary = association_table_usergrp, back_populates='groups')
     events = db.relationship('Event', cascade='delete')#one to many with 'events'
     # messages = db.relationship('Message', cascade='delete')#one to many with 'messages'
-    polls = db.relationship('Poll', cascade='delete')#one to  many with 'polls'
+    poll1s = db.relationship('Poll1', cascade='delete')#one to  many with 'polls'
+    poll2s = db.relationship('Poll1', cascade='delete')#one to  many with 'polls'
 
-     def __init__(self, **kwargs):
+    def __init__(self, **kwargs):
         self.name = kwargs.get('name', '')
 
-     def serialize_name(self):
+    def serialize_name(self):
         return{
             'id':self.id,
             'name': self.name
         }
 
-     def serialize(self):
+    def serialize(self):
         return{
             'id':self.id,
             'name':self.name,
             'organizer': [s.serialize_name() for s in self.user] ,
             'members':  [s.serialize_name() for s in self.members],
-            'events': [s.serialize_name() for s in self.events] ,
-            # 'messages':  #messages thing
-            'polls': #polls thing
+            'events': [s.serialize_name() for s in self.events],
+            'poll1s': [s.serialize() for s in self.poll1s],
+            'poll2s': [s.serialize() for s in self.poll2s]
         }
 
 class Activity(db.Model):
     __tablename__='activity'
-    id = db.Column(db.Integer, primary_key = True)
+    id = db.Column(db.Integer, primary_key = True, autoincrement=True)
     name = db.Column (db.String, nullable = False)
     category = db.Column (db.String, nullable = False)
-    timeofday = db.Column (db.String, nullable = True)
-    weather =  db.Column (db.String, nullable = True)
-    minnumppl = db.Column (db.Integer, nullable = True)
-    maxnumppl = db.Column (db.Integer, nullable = True)
+    timeofday = db.Column (db.String, nullable = False)
+    weather =  db.Column (db.String, nullable = False)
+    minnumppl = db.Column (db.Integer, nullable = False)
+    maxnumppl = db.Column (db.Integer, nullable = False)
     location = db.Column (db.String, nullable = False)
     description = db.Column (db.String, nullable = False)
 
@@ -108,15 +109,23 @@ class Activity(db.Model):
         self.category = kwargs.get('category', '')
         self.timeofday = kwargs.get('timeofday', '')
         self.weather = kwargs.get('weather','')
-        self.minnumppl = kwargs.get('mininumppl', '')
+        self.minnumppl = kwargs.get('minnumppl', '')
         self.maxnumppl = kwargs.get('maxnumppl','')
         self.location = kwargs.get('location', '')
+        self.name = kwargs.get('name', '')
         self.description = kwargs.get('description','')
 
     def serialize(self):
         return{
             'id':self.id,
-
+            'name': self.name,
+            'category': self.category,
+            'timeofday': self.timeofday,
+            'weather': self.weather,
+            'minnumppl': self.minnumppl,
+            'maxnumppl': self.maxnumppl,
+            'location': self.location,
+            'description': self.desscription
         }
 
 # class Message(db.Model):
@@ -147,6 +156,7 @@ class Activity(db.Model):
 #             'timestamp':self.timestamp,
 #             'group':group.serialize_name()
 #         }
+
 
 #Organizer will choose a set day and others in pact will vote on time of day
 #json.dumps turns json into String
@@ -206,8 +216,8 @@ class Poll2(db.Model):
         self.group = kwargs.get('group', '')
         self.timestamp = ctime()
         self.eventtime = kwargs.get('eventtime', '')
-        self.choices = json.dumps([])#array
-        self.answers = json.dumps({})#dictionary
+        self.choice = json.dumps([])#array
+        self.answer = json.dumps({})#dictionary
 
     def serialize(self):
         group = Group.query.filter_by(id=self.group).first()
@@ -217,8 +227,8 @@ class Poll2(db.Model):
             'question':self.question,
             'timestamp':self.timestamp,
             'group': group.serialize_name(),
-            'choices': json.loads(self.choices),
-            'answers': json.loads(self.answers)
+            'choice': json.loads(self.choices),
+            'answer': json.loads(self.answers)
         }
 
 class Event(db.Model):
@@ -230,8 +240,8 @@ class Event(db.Model):
     name = db.Column(db.String, nullable=False)
     location =  db.Column(db.String, nullable=False) #address, or modality
     time = db.Column(db.String, nullable=False)
-    attending = ('User', secondary=association_table_attevt, back_populates='events')
-    notattending = ('User', secondary=association_table_nattevt, back_populates='events')
+    attending = db.relationship('User', secondary=association_table_attevt, back_populates='events')
+    notattending = db.relationship('User', secondary=association_table_nattevt, back_populates='events')
 
     def __init__(self, **kwargs):
         self.active = True
@@ -252,7 +262,7 @@ class Event(db.Model):
             'group':group.serialize_name(),
             'organizer':organizer.serialize_name(),
             'name':self.name,
-            'location': self,location,
+            'location': self.location,
             'time': self.time,
             'attending': [s.serialize_name() for s in self.attending],
             'notattending': [s.serialize_name() for s in self.notattending]
@@ -267,6 +277,6 @@ class Event(db.Model):
             'active':self.active,
             'organizer':organizer.serialize_name(),
             'name':self.name,
-            'location': self,location,
+            'location': self.location,
             'time': self.time
         }

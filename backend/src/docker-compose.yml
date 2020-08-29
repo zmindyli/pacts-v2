@@ -1,0 +1,8 @@
+version: "3"
+services:
+  app:
+    image: alhsu/pacts
+    ports:
+      - "80:5000"
+    volumes:
+      - /home/alh293/pacts.db:/Users/allisonhsu/gitbub2/pacts/backend
