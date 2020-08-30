@@ -3,7 +3,7 @@ Welcome to Pact, created as a project for HackOurCampus 2020. Our team consists 
 
 Due to some issues, we had to create a new repo. To see older commits, check out https://github.com/angelachen19/pacts.
 
-See our submitted HackOurCampus project presentation at https://youtu.be/H9uDtR2bx1o.
+See our submitted HackOurCampus [project presentation](https://youtu.be/H9uDtR2bx1o).
 
 # Contributors
 Angela Chen [@angelachen19](github.com/angelachen19)
