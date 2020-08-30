@@ -1,5 +1,7 @@
 # Pacts - HackOurCampus 2020 Team 4BPs
-Welcome to Pact, created as a project for HackOurCampus 2020. Our team consists of Angela Chen, Allison Hsu, Mindy Li, and Ava Tan.
+Welcome to Pacts, created as a project for HackOurCampus 2020. Our team consists of Angela Chen, Allison Hsu, Mindy Li, and Ava Tan.
+
+Pacts is an app that makes scheduling social distancing events between Cornell students simple. Users are able to invite friends and make "pacts" or groups of friends. Members of each pact can vote on types of activities to do and can then choose from a list of suggested events. Seeing upcoming events is even easier in the "events" tab and the pinned events notifications at the top of each pact page.
 
 Due to some issues, we had to create a new repo. To see older commits, check out https://github.com/angelachen19/pacts.
 
