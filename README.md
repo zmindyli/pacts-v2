@@ -8,7 +8,7 @@ See our submitted HackOurCampus [project presentation](https://youtu.be/H9uDtR2b
 # Contributors
 Angela Chen [@angelachen19](https://github.com/angelachen19)
 
-Allison Hsu [@alhsu713](https://github.com/alhsu7131)
+Allison Hsu [@alhsu713](https://github.com/alhsu713)
 
 Mindy Li [@zmindyli](https://github.com/zmindyli)
 
